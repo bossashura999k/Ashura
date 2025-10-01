@@ -1,0 +1,22 @@
+body {
+    margin: 25px;
+    border-bottom: 10px solid #0000ff;
+    
+}
+
+.card {
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    background-color: aqua;
+    font-style: oblique;
+    font-size: 25px;
+    margin: auto;
+}
+
+.pic {
+    width: 425px;
+    
+}
+
+
