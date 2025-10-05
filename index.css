@@ -10,6 +10,7 @@
 body {
     background-image: url("bg\(12\).png");
     background-size: cover;
+    background-position: center;
     color: #00ffff;
 }
 @font-face {
@@ -24,4 +25,5 @@ body {
     color: #000000;
     background-color: #ffffff;
     border: none;
+
 }    
