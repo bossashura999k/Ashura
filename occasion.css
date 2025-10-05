@@ -9,6 +9,7 @@ body {
     color: #00ffff;
     background-image: url("bg\(14\).png");
     background-size: cover;
+    background-position: center;
 }
 
 @font-face {
@@ -46,4 +47,5 @@ body {
     width: 500px;
     border-radius: 100%;
     border: 10px solid #ffd700;
+
 }
