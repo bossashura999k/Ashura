@@ -6,6 +6,7 @@ header {
 body {
     background-image: url("c.png");
     background-size: cover;
+    background-position: center;
     color: #ffffff;
 }
 .text {
@@ -39,4 +40,5 @@ li {
 .exempt {
     color: #000000;
 }
+
 
