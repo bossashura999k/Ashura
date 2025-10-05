@@ -5,12 +5,6 @@
     border: none;
 }    
 
-body {
-    color: #00ffff;
-    background-image: url("bg\(14\).png");
-    background-size: cover;
-    background-position: center;
-}
 
 @font-face {
     font-family: bold;
@@ -24,6 +18,8 @@ body {
 
 .c {
     background-image: url("bg\(8\).png");
+    background-size: cover;
+    background-position: center;
     color: #ffffff;
 }
 
@@ -31,11 +27,21 @@ body {
     background-image: url("bg\(11\).png");
     background-size: cover;
     background-position: center;
+    color: #00ffff;
+    background-size: cover;
+    text-shadow: 5px 5px 20px #ffd700;
 }
 
 .e {
-    text-align: center;
+   display: flex;
+    align-items: center;
+    flex-direction: column;
     font-family: monkey;
+    color: #00ffff;
+    background-image: url("bg\(14\).png");
+    background-size: cover;    
+    background-position: center;
+    text-shadow: 5px 5px 20px #ffd700;
 }
 
 @font-face {
@@ -43,9 +49,16 @@ body {
     src: url("HappyMonkey-Regular.ttf");
 }
 
+
 #g {
     width: 500px;
     border-radius: 100%;
     border: 10px solid #ffd700;
+}
 
+#h {
+     background-image: url("bg\(16\).png");
+    background-size: cover;    
+    background-position: center;
+    color: #00ffff;
 }
