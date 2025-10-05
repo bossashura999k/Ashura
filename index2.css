@@ -1,0 +1,42 @@
+header {
+    font-size: 100px;
+    color: #0000ff;
+}
+
+body {
+    background-image: url("c.png");
+    background-size: cover;
+    color: #ffffff;
+}
+.text {
+    font-size: 20px;
+}
+
+li {
+    color: #00d2d2;
+    font-size: 30px;
+}
+
+.history {
+    font-size: 35px;
+    color: #ff0000
+}
+
+.kali {
+    border: 20px solid #0000ff;
+    border-radius: 20px;
+}
+
+.debian {
+    border: 20px solid #000000;
+    border-radius: 20px;
+}
+
+.ubuntu {
+    border: 20px solid #000000
+}
+
+.exempt {
+    color: #000000;
+}
+

@@ -1,0 +1,27 @@
+#header {
+    font-size: 75px;
+    color: #00ffff;
+    font-family: charm;
+    font-size: 150px;
+    text-shadow: 10px 10px 8px #ffffff;
+    
+}
+
+body {
+    background-image: url("bg\(12\).png");
+    background-size: cover;
+    color: #00ffff;
+}
+@font-face {
+    font-family: charm;
+    src: url("Valentine\ Charming.ttf");
+}
+
+.btn {
+    padding: 8px 15px;
+    font-size: 20px;
+    text-shadow: 0px 0px 3px #636363;
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+}    

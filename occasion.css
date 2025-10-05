@@ -1,0 +1,49 @@
+.btn {
+    padding: 8px 15px 7px 15px;
+    color: #ffffff;
+    background-color: #000000;
+    border: none;
+}    
+
+body {
+    color: #00ffff;
+    background-image: url("bg\(14\).png");
+    background-size: cover;
+}
+
+@font-face {
+    font-family: bold;
+    src: url("THEBOLDFONT-FREEVERSION.ttf");
+}
+
+.a {
+    font-size: 35px;
+    font-family: bold;
+}
+
+.c {
+    background-image: url("bg\(8\).png");
+    color: #ffffff;
+}
+
+.b {
+    background-image: url("bg\(11\).png");
+    background-size: cover;
+    background-position: center;
+}
+
+.e {
+    text-align: center;
+    font-family: monkey;
+}
+
+@font-face {
+    font-family: monkey;
+    src: url("HappyMonkey-Regular.ttf");
+}
+
+#g {
+    width: 500px;
+    border-radius: 100%;
+    border: 10px solid #ffd700;
+}
