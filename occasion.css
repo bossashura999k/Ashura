@@ -5,6 +5,10 @@
     border: none;
 }    
 
+.btn:hover {
+    background: #00ffff;
+    font-size: 40px;
+}
 
 @font-face {
     font-family: bold;
@@ -75,5 +79,6 @@
 .gifts:hover {
     background-image: url("beers.gif");
 }
+
 
 
