@@ -42,7 +42,7 @@
     flex-direction: column;
     font-family: monkey;
     color: #00ffff;
-    background-image: url("bg\(14\).png");
+    background: linear-gradient(red, #00ffff);
     background-size: cover;    
     background-position: center;
     text-shadow: 5px 5px 20px #ffd700;
