@@ -68,11 +68,12 @@
     margin-top: 100px;
     width: 500px;
     height: 500px;
-    background-image: url("../Pics/gift.gif");
+    background-image: url("gift.gif");
     background-size: cover;
 }
 
 .gifts:hover {
-    background-image: url("../Pics/beers.gif");
+    background-image: url("beers.gif");
 }
+
 
