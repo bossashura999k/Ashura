@@ -15,6 +15,10 @@
     src: url("THEBOLDFONT-FREEVERSION.ttf");
 }
 
+#copy {
+    font-size: 25px;
+}
+
 .a {
     font-size: 35px;
     font-family: bold;
@@ -79,6 +83,7 @@
 .gifts:hover {
     background-image: url("beers.gif");
 }
+
 
 
 
