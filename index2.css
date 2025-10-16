@@ -18,6 +18,10 @@ li {
     font-size: 30px;
 }
 
+#copy {
+    font-size: 25px;
+}
+
 .history {
     font-size: 35px;
     color: #ff0000
@@ -40,5 +44,6 @@ li {
 .exempt {
     color: #000000;
 }
+
 
 
