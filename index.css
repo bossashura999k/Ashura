@@ -25,7 +25,7 @@ body {
     color: #000000;    
     background-color: #ffffff;
     border: none;
-
+    border-radius: 35%;
 }    
 
 #copy {
@@ -36,4 +36,5 @@ body {
     background: #00ffff;
     font-size: 40px;
 }
+
 
