@@ -3,6 +3,9 @@ header {
     color: #0000ff;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 body {
     background-image: url("c.png");
     background-size: cover;
@@ -44,6 +47,7 @@ li {
 .exempt {
     color: #000000;
 }
+
 
 
 
