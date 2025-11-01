@@ -25,16 +25,19 @@ body {
     color: #000000;    
     background-color: #ffffff;
     border: none;
-    border-radius: 35%;
+    border-radius: 25px;
 }    
 
+.btn:active {
+    color: #ffffff;
+    background-color: #000000;
+}
 #copy {
     font-size: 25px;
 }
 
-.btn:hover {
-    background: #00ffff;
     font-size: 40px;
 }
+
 
 
