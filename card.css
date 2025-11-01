@@ -1,6 +1,6 @@
 body {
     background-image: url("bg\(5\).gif");
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     margin: 25px;
     border-bottom: 10px solid #0000ff;
@@ -22,6 +22,7 @@ body {
     width: 425px;
     
 }
+
 
 
 
