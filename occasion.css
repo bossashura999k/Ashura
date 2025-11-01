@@ -3,7 +3,13 @@
     color: #ffffff;
     background-color: #000000;
     border: none;
+    border-radius: 20px;
 }    
+
+.btn:active {
+    background-color: #ffffff;
+    color: #000000;
+}
 
 .btn:hover {
     background: #00ffff;
@@ -83,6 +89,7 @@
 .gifts:hover {
     background-image: url("beers.gif");
 }
+
 
 
 
