@@ -1040,3 +1040,28 @@ section {
         gap: 1rem;
     }
 }
+
+#animate {
+    width: 100%;
+    animation: fadeIn 1s ease;
+}
+
+#animate-div {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #050505;
+  z-index: 9999;
+  animation: fadeOut 1s ease 2s forwards; 
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
