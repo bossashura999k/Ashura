@@ -3,7 +3,7 @@
     color: #00ffff;
     font-family: charm;
     font-size: 150px;
-    text-shadow: 10px 10px 8px #ffffff;
+    text-shadow: 10px 10px 8px #fffffe;
     
 }
 
@@ -61,3 +61,4 @@ body {
 @keyframes fadeOut {
   to { opacity: 0; visibility: hidden; }
 }
+
