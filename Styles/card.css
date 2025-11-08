@@ -1,5 +1,6 @@
 body {
-    background-image: url("bg\(5\).gif");
+    font-family: Arial;
+    background-image: url("../Gifs/bg\(5\).gif");
     background-size: contain;
     background-position: center;
     margin: 25px;

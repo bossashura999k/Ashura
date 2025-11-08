@@ -18,7 +18,7 @@
 
 @font-face {
     font-family: bold;
-    src: url("THEBOLDFONT-FREEVERSION.ttf");
+    src: url("../Fonts/THEBOLDFONT-FREEVERSION.ttf");
 }
 
 #copy {
@@ -31,14 +31,14 @@
 }
 
 .c {
-    background-image: url("bg\(8\).png");
+    background-image: url("../Pics/bg\(8\).png");
     background-size: cover;
     background-position: center;
     color: #ffffff;
 }
 
 .b {
-    background-image: url("bg\(11\).png");
+    background-image: url("../Pics/bg\(11\).png");
     background-size: cover;
     background-position: center;
     color: #00ffff;
@@ -60,7 +60,7 @@
 
 @font-face {
     font-family: monkey;
-    src: url("HappyMonkey-Regular.ttf");
+    src: url("../Fonts/HappyMonkey-Regular.ttf");
 }
 
 
@@ -71,7 +71,7 @@
 }
 
 #h {
-     background-image: url("bg\(16\).png");
+     background-image: url("../Pics/bg\(16\).png");
     background-size: cover;    
     background-position: center;
     color: #00ffff;
@@ -82,12 +82,12 @@
     margin-top: 100px;
     width: 500px;
     height: 500px;
-    background-image: url("gift.gif");
+    background-image: url("../Gifs/gift.gif");
     background-size: cover;
 }
 
 .gifts:hover {
-    background-image: url("beers.gif");
+    background-image: url("../Gifs/beers.gif");
 }
 
 

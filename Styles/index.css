@@ -8,14 +8,14 @@
 }
 
 body {
-    background-image: url("bg\(12\).png");
+    background-image: url("../Pics/bg\(12\).png");
     background-size: cover;
     background-position: center;
     color: #00ffff;
 }
 @font-face {
     font-family: charm;
-    src: url("Valentine\ Charming.ttf");
+    src: url("../Fonts/Valentine\ Charming.ttf");
 }
 
 .btn {
