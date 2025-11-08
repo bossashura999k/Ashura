@@ -1,69 +1,65 @@
-Author: Ashura
-Email: bossashura999k@gmail.com
-
-My Website
+# My Website
 
 A simple HTML/CSS website showcasing my work, with images and responsive design.
 
-
 ---
 
-📁 Project Structure
+## 📁 Project Structure
 
+```
 Ashura/
 ├── index.html
 ├── index2.html
 ├── card.html
 ├── Styles/
-├── Pics/
+├── images/
 ├── Fonts/
-├── excel/
+├── Pics/
 ├── Gifs/
 ├── Occasions/
-├── .gitignore 
+├── excel/
+├── LICENSE
 └── README.md
-
+```
 
 ---
 
-🚀 How to View Locally
+## 🚀 How to View Locally
 
 1. Clone the repository:
-
-git clone https://github.com/bossashura999k/Ashura.git
-
-
+   ```bash
+   git clone https://github.com/username/my-website.git
+   ```
 2. Navigate into the folder:
-
-cd my-website
-
-
-3. Open index.html in your favorite browser.
-
-
-
+   ```bash
+   cd my-website
+   ```
+3. Open `index.html` in your favorite browser.
 
 ---
 
-🛠 Features
+## 🛠 Features
 
-Responsive layout
-
-Clean, modern design
-
-Organized folder structure for easy maintenance
-
-
+- Responsive layout  
+- Clean, modern design  
+- Organized folder structure for easy maintenance  
 
 ---
 
-🎨 Credits
+## 👤 Author
 
-Fonts: Open Sans, Arial, Valentine Charming, Happy Monkey 
-
+Ashura
 
 ---
 
-📜 License
+## 🎨 Credits
 
-This project is licensed under the MIT License.
+- Fonts: [Open Sans](https://fonts.google.com/specimen/Open+Sans)  
+- Icons: [FontAwesome](https://fontawesome.com/) (if used)  
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
