@@ -1,3 +1,6 @@
+Author: Ashura
+Email: bossashura999k@gmail.com
+
 My Website
 
 A simple HTML/CSS website showcasing my work, with images and responsive design.
