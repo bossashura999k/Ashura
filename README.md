@@ -28,11 +28,11 @@ Ashura/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/my-website.git
+   git clone https://github.com/bossashura99k/Ashura.git
    ```
 2. Navigate into the folder:
    ```bash
-   cd my-website
+   cd Ashura
    ```
 3. Open `index.html` in your favorite browser.
 
