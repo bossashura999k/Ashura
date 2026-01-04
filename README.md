@@ -14,6 +14,7 @@ Ashura/
 ├── Styles/
 ├── images/
 ├── Fonts/
+├── Preview/
 ├── Pics/
 ├── Gifs/
 ├── Occasions/
