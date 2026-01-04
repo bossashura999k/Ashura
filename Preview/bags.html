@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mr Izzi — Bags Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14; /* deep */
+      --card:#0f1720;
+      --accent:#00d26a; /* green */
+      --muted:#9aa6b2;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --frame: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,var(--bg) 0%, #0710ff 100%);
+      color:#e6eef3;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+    }
+
+    .container{width:100%;max-width:1100px}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;margin-bottom:18px
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#07ff19 0%,#0e2b1d 100%);display:flex;align-items:center;justify-content:center;border:1px solid var(--frame);box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+    .logo strong{color:var(--accent);font-size:20px}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted)}
+
+    /* hero */
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center;margin-bottom:22px
+    }
+
+    .hero-card{
+      padding:20px;border-radius:14px;background:linear-gradient(180deg,var(--card),rgba(12,16,20,0.9));border:1px solid var(--glass);box-shadow:0 8px 40px rgba(2,6,8,0.6)
+    }
+
+    .cta{display:flex;gap:12px;align-items:center;margin-top:14px}
+    .btn{background:var(--accent);color:#02110a;padding:10px 14px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+
+    /* product grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
+    @media (max-width:980px){.hero{grid-template-columns:1fr} .grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:600px){.grid{grid-template-columns:1fr} body{padding:16px}}
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+      border-radius:12px;padding:12px;border:1px solid var(--glass-2);overflow:hidden;position:relative
+    }
+
+    .pic-frame{
+      height:220px;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(0,0,0,0.0));border:1px solid var(--frame);position:relative
+    }
+    .pic-frame img{width:100%;height:100%;object-fit:cover;display:block;transform-origin:center;transition:transform .55s cubic-bezier(.2,.9,.3,1)}
+    .pic-frame::after{
+      content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg, rgba(0,0,0,0.08), rgba(255,255,255,0.02));
+    }
+
+    .product-info{display:flex;align-items:center;justify-content:space-between;padding-top:10px}
+    .name{font-weight:700}
+    .price{background:rgba(0,0,0,0.35);padding:6px 10px;border-radius:8px;font-weight:800;color:var(--accent)}
+
+    /* floating animation */
+    .float-slow{animation:floatY 6s ease-in-out infinite}
+    .float-medium{animation:floatY 5s ease-in-out infinite}
+    .float-fast{animation:floatY 4s ease-in-out infinite}
+    @keyframes floatY{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+    /* hover effects */
+    .card:hover .pic-frame img{transform:scale(1.06) rotate(-1deg)}
+    .card:hover{box-shadow:0 16px 40px rgba(0,0,0,0.55);transform:translateY(-6px);transition:transform .25s}
+
+    /* tag */
+    .tag{position:absolute;left:12px;top:12px;background:linear-gradient(90deg,#0fffc0, #00a86b);padding:6px 10px;border-radius:999px;color:#01210d;font-weight:700;font-size:12px;border:1px solid rgba(255,255,255,0.06)}
+
+    /* modal */
+    .modal{position:fixed;inset:0;background:linear-gradient(180deg,rgba(1,2,3,0.6), rgba(0,0,0,0.6));display:flex;align-items:center;justify-content:center;z-index:60;backdrop-filter:blur(6px);visibility:hidden;opacity:0;transition:opacity .18s}
+    .modal.open{visibility:visible;opacity:1}
+    .modal-card{width:92%;max-width:900px;background:linear-gradient(180deg,#081217, #071018);border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.04);display:grid;grid-template-columns:1fr 320px;gap:18px}
+    @media (max-width:900px){.modal-card{grid-template-columns:1fr}}
+    .modal-pic{height:420px;border-radius:10px;overflow:hidden}
+    .modal-meta{display:flex;flex-direction:column;gap:12px}
+
+    /* tiny toast */
+    .toast{position:fixed;right:18px;bottom:18px;background:#071b10;padding:12px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 6px 18px rgba(0,0,0,0.6);opacity:0;transform:translateY(20px);transition:all .25s;z-index:80}
+    .toast.show{opacity:1;transform:translateY(0)}
+
+    /* accessible focus */
+    button:focus, a:focus{outline:2px solid rgba(0,210,106,0.18);outline-offset:3px}
+
+    /* small helpers */
+    .muted{color:var(--muted);font-size:13px}
+    .center{display:flex;align-items:center;gap:8px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo"><strong>IZ</strong></div>
+        <div>
+          <h1>Mr Izzi — Bags & Co</h1>
+          <p class="lead muted">Sharp. Clean. Chaka prices.</p>
+        </div>
+      </div>
+      <div class="center">
+        <div class="muted">Showing <strong>6</strong> top styles</div>
+        <button class="btn ghost" id="contactBtn">Contact</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <h2 style="margin:0 0 6px 0">Get a clean shop presence</h2>
+          <p class="muted">Showcase your products with sharp website pages that convert. I design and deploy fast, responsive product pages for small businesses.</p>
+
+          <div class="cta">
+            <button class="btn" id="hireBtn">Contact Mr Izzi</button>
+            <button class="btn ghost" id="portfolioBtn">See portfolio</button>
+          </div>
+
+          <div style="margin-top:14px;display:flex;gap:10px;align-items:center">
+            <div style="width:78px;height:56px;border-radius:8px;background:linear-gradient(135deg,#071018,#09231b);border:1px solid var(--frame);display:flex;align-items:center;justify-content:center">
+              <div style="font-weight:800;color:var(--accent)">W</div>
+            </div>
+            <div>
+              <div style="font-weight:700">Special</div>
+              <div class="muted">Website bundles from N25,000</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <!-- featured product preview -->
+          <div class="card float-medium">
+            <div class="tag">Popular</div>
+            <div class="pic-frame" style="height:300px">
+              <img src="207980951-1-silvermet.jpeg" alt="brown leather bag" />
+            </div>
+            <div class="product-info">
+              <div>
+                <div class="name">Classic Leather Tote</div>
+                <div class="muted">Durable. Clean lines.</div>
+              </div>
+              <div style="text-align:right">
+                <div class="price">₦35,000</div>
+                <div style="margin-top:8px"><button class="btn" data-name="Classic Leather Tote" data-price="35000" data-img="https://source.unsplash.com/collection/190727/1200x900?bag">Buy</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid" id="products">
+        <!-- product template repeated -->
+        <div class="card float-slow">
+          <div class="pic-frame"><img src="208481497-1-black.jpeg" alt="bag 1" /></div>
+          <div class="product-info">
+            <div>
+              <div class="name">Sling Crossbody</div>
+              <div class="muted">Compact & handy</div>
+            </div>
+            <div style="text-align:right">
+              <div class="price">₦18,000</div>
+              <div style="margin-top:8px"><button class="btn" data-name="Sling Crossbody" data-price="18000" data-img="https://source.unsplash.com/featured/?leather-sling">View</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card float-medium">
+          <div class="pic-frame"><img src="208995850-1-white.jpeg" alt="bag 2" /></div>
+          <div class="product-info">
+            <div>
+              <div class="name">Urban Backpack</div>
+              <div class="muted">Everyday carry</div>
+            </div>
+            <div style="text-align:right">
+              <div class="price">₦28,500</div>
+              <div style="margin-top:8px"><button class="btn" data-name="Urban Backpack" data-price="28500" data-img="https://source.unsplash.com/featured/?backpack">View</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card float-fast">
+          <div class="pic-frame"><img src="209008208-1-brown.jpeg" alt="bag 3" /></div>
+          <div class="product-info">
+            <div>
+              <div class="name">Mini Handbag</div>
+              <div class="muted">Small but chic</div>
+            </div>
+            <div style="text-align:right">
+              <div class="price">₦15,000</div>
+              <div style="margin-top:8px"><button class="btn" data-name="Mini Handbag" data-price="15000" data-img="https://source.unsplash.com/featured/?handbag">View</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card float-slow">
+          <div class="pic-frame"><img src="209008247-1-black.jpeg" alt="bag 4" /></div>
+          <div class="product-info">
+            <div>
+              <div class="name">Canvas Tote</div>
+              <div class="muted">Light & practical</div>
+            </div>
+            <div style="text-align:right">
+              <div class="price">₦9,500</div>
+              <div style="margin-top:8px"><button class="btn" data-name="Canvas Tote" data-price="9500" data-img="https://source.unsplash.com/featured/?tote-bag">View</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card float-medium">
+          <div class="pic-frame"><img src="209664913-1-brown.jpeg" alt="bag 5" /></div>
+          <div class="product-info">
+            <div>
+              <div class="name">Weekend Duffel</div>
+              <div class="muted">Travel friendly</div>
+            </div>
+            <div style="text-align:right">
+              <div class="price">₦42,000</div>
+              <div style="margin-top:8px"><button class="btn" data-name="Weekend Duffel" data-price="42000" data-img="https://source.unsplash.com/featured/?duffel">View</button></div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <!-- modal -->
+  <div class="modal" id="modal" role="dialog" aria-hidden="true">
+    <div class="modal-card">
+      <div>
+        <div class="modal-pic" id="modalPic" style="background:#111"></div>
+      </div>
+      <div class="modal-meta">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <h3 id="modalName" style="margin:0">Product name</h3>
+            <div class="muted" id="modalDesc">Short description</div>
+          </div>
+          <div style="text-align:right">
+            <div class="price" id="modalPrice">₦0</div>
+          </div>
+        </div>
+        <div style="margin-top:8px">
+          <p class="muted">High quality product. Fast delivery across Nigeria. Secure checkout.</p>
+        </div>
+        <div style="margin-top:auto;display:flex;gap:8px">
+          <button class="btn" id="checkoutBtn">Buy now</button>
+          <button class="btn ghost" id="closeModal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Added to cart</div>
+
+  <script>
+    // basic interactions: modal + mock add-to-cart
+    const modal = document.getElementById('modal');
+    const modalPic = document.getElementById('modalPic');
+    const modalName = document.getElementById('modalName');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalDesc = document.getElementById('modalDesc');
+    const closeModal = document.getElementById('closeModal');
+    const toast = document.getElementById('toast');
+
+    // open modal when any 'View' or 'Buy' button clicked
+    document.querySelectorAll('button[data-name]').forEach(btn=>{
+      btn.addEventListener('click', e=>{
+        const name = btn.dataset.name;
+        const price = btn.dataset.price;
+        const img = btn.dataset.img;
+        openModal({name,price,img});
+      })
+    })
+
+    function openModal({name,price,img}){
+      modalName.textContent = name;
+      modalPrice.textContent = '₦' + Number(price).toLocaleString();
+      modalDesc.textContent = 'Top quality product. Order now and enjoy fast delivery.';
+      // set background image of modal-pic for a nice effect
+      modalPic.style.backgroundImage = `url(${img})`;
+      modalPic.style.backgroundSize = 'cover';
+      modalPic.style.backgroundPosition = 'center';
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+    }
+
+    closeModal.addEventListener('click', ()=>{
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+    })
+
+    // also close if user clicks outside modal-card
+    modal.addEventListener('click', (e)=>{
+      if(e.target === modal) { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
+    })
+
+    // fake checkout / buy
+    document.getElementById('checkoutBtn').addEventListener('click', ()=>{
+      showToast('Order placed — Mr Izzi go call you');
+      modal.classList.remove('open');
+    })
+
+    function showToast(txt='Added to cart'){
+      toast.textContent = txt;
+      toast.classList.add('show');
+      setTimeout(()=>toast.classList.remove('show'), 2600);
+    }
+
+    // contact & hire buttons
+    document.getElementById('contactBtn').addEventListener('click', ()=>{
+      window.location.href = 'tel:+2348012345678';
+    })
+    document.getElementById('hireBtn').addEventListener('click', ()=>{
+      // simple quick contact action — could be replaced with chat link
+      showToast('Contact Mr Izzi: +234 801 234 5678');
+    })
+
+    // progressive image float randomization to make cards feel organic
+    (function randomizeFloat(){
+      const cards = document.querySelectorAll('.card');
+      cards.forEach((c,i)=>{
+        const seed = (i%3)+1;
+        if(seed===1) c.classList.add('float-slow');
+        if(seed===2) c.classList.add('float-medium');
+        if(seed===3) c.classList.add('float-fast');
+        // slight rotation variety
+        c.style.transformOrigin = 'center';
+      })
+    })();
+
+    // accessibility: close modal with Escape
+    window.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape'){
+        if(modal.classList.contains('open')){
+          modal.classList.remove('open');
+        }
+      }
+    })
+
+    // respects prefers-reduced-motion
+    const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(prefersReduce){
+      document.querySelectorAll('.float-slow, .float-medium, .float-fast').forEach(el=>{
+        el.style.animation = 'none';
+      })
+    }
+  </script>
+</body>
+</html>
