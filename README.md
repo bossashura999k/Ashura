@@ -19,6 +19,8 @@ Ashura/
 ├── Gifs/
 ├── Occasions/
 ├── excel/
+├── portfolio/
+├── .secret.gpg(PRIVATE!!! Do not access please.)
 ├── LICENSE
 └── README.md
 ```
