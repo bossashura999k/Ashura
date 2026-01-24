@@ -30,6 +30,10 @@
     font-family: bold;
 }
 
+body {
+    background-image: url("../Pics/perfect_bg.png");
+    background-size: cover;
+}
 .c {
     background-image: url("../Pics/bg\(8\).png");
     background-size: cover;
