@@ -35,14 +35,14 @@ body {
     background-size: cover;
 }
 .c {
-    background-image: url("../Pics/bg\(8\).png");
+    background-image: url("https://ashura.site/Pics/bg\(8\).png");
     background-size: cover;
     background-position: center;
     color: #ffffff;
 }
 
 .b {
-    background-image: url("../Pics/bg\(11\).png");
+    background-image: url("https://ashura.site/Pics/bg\(11\).png");
     background-size: cover;
     background-position: center;
     color: #00ffff;
@@ -75,7 +75,7 @@ body {
 }
 
 #h {
-     background-image: url("../Pics/bg\(16\).png");
+     background-image: url("https://ashura.site/Pics/bg\(16\).png");
     background-size: cover;    
     background-position: center;
     color: #00ffff;
